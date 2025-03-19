@@ -6,10 +6,10 @@ const ProjectManagementSection = () => {
       <div className="w-full py-16 px-4 md:px-8 bg-white">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
+            <div className="w-full md:w-1/2 pr-0 md:pr-10 m-8 md:mb-0">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                 Project
-                <span className="ml-3 relative inline-block px-1">
+                <span className="relative inline-block px-1">
                   <span className="relative z-10">Management</span>
                   <span className="absolute inset-x-0 -bottom-3 h-3 bg-yellow-300"></span>
                 </span>
@@ -94,7 +94,7 @@ const ProjectManagementSection = () => {
             </div>
           </div>
         </div>
-        
+
             <div className="w-full md:w-1/2 pr-0 md:px-8 mb-8 md:mb-0">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                 Work 
