@@ -11,7 +11,8 @@ const TestimonialCarousel = () => {
       author: "Oberon Shaw, MCH",
       position: "Head of Talent Acquisition, North America",
       avatarColor: "bg-orange-100",
-      bgColor: "bg-white"
+      bgColor: "bg-white",
+      avatarImg: "/Avater.png"
     },
     {
       id: 2,
@@ -19,7 +20,8 @@ const TestimonialCarousel = () => {
       author: "Oberon Shaw, MCH",
       position: "Head of Talent Acquisition, North America",
       avatarColor: "bg-blue-100",
-      bgColor: "bg-blue-400"
+      bgColor: "bg-blue-400",
+      avatarImg: "/Avater-2.png"
     },
     {
       id: 3,
@@ -27,7 +29,8 @@ const TestimonialCarousel = () => {
       author: "Oberon Shaw, MCH",
       position: "Head of Talent Acquisition, North America",
       avatarColor: "bg-pink-200",
-      bgColor: "bg-blue-400"
+      bgColor: "bg-blue-400",
+      avatarImg: "/Avater-3.png"
     }
   ];
 
@@ -54,13 +57,13 @@ const TestimonialCarousel = () => {
 
   const getVisibleCount = () => {
     if (windowWidth < 640) return 1;
-    return 3;                            
+    return 3;
   };
 
   const visibleCount = getVisibleCount();
   const startIndex = activeIndex;
   const visibleTestimonials = [];
-  
+
   for (let i = 0; i < visibleCount; i++) {
     const index = (startIndex + i) % testimonials.length;
     visibleTestimonials.push(testimonials[index]);
@@ -70,14 +73,14 @@ const TestimonialCarousel = () => {
     <div className="w-full max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
         What Our  <span className="relative inline-block ">
-        Clients Says
+          Clients Says
           <span className=" absolute -bottom-3 left-0 w-full h-3 bg-yellow-300 -z-10"></span>
         </span>
       </h2>
-      
+
       <div className="flex flex-col md:flex-row gap-6 mb-8">
-        {visibleTestimonials.map((testimonial, index) => (
-          <div 
+        {visibleTestimonials.map((testimonial) => (
+          <div
             key={testimonial.id}
             className={`rounded-lg shadow-md p-6 flex-1 transition-all duration-300 ${testimonial.bgColor} ${testimonial.bgColor !== 'bg-white' ? 'text-white' : 'text-gray-800'}`}
           >
@@ -86,11 +89,12 @@ const TestimonialCarousel = () => {
             <div className="w-full h-px bg-gray-200 opacity-30 mb-6"></div>
             <div className="flex items-center">
               <div className={`w-16 h-16 rounded-full overflow-hidden mr-4 ${testimonial.avatarColor}`}>
-                <div className="w-full h-full flex items-center justify-center">
-                  {index === 0 && <span className="text-2xl">👩</span>}
-                  {index === 1 && <span className="text-2xl">👨</span>}
-                  {index === 2 && <span className="text-2xl">👨</span>}
-                </div>
+                <img
+                  src={testimonial.avatarImg}
+                  alt={`${testimonial.author} avatar`}
+                  className="w-full h-full object-cover"
+
+                />
               </div>
               <div>
                 <h4 className="font-bold text-lg">{testimonial.author}</h4>
@@ -100,7 +104,7 @@ const TestimonialCarousel = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="flex justify-center gap-2">
         {testimonials.map((_, index) => (
           <button
