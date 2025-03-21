@@ -9,7 +9,7 @@ const Main = () => {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               Get More Done with whitepace
             </h1>
-            <p className="text-lg md:text-xl mb-8">
+            <p className="text-lg  md:text-xl pr-2 mb-8 justify-start mx:justify-start ">
               Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks
             </p>
             <div className="flex justify-center md:justify-start">
